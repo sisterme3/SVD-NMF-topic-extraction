@@ -1,0 +1,10 @@
+small = fileread("crypt.txt");
+a = string(small);
+a = splitlines(a);
+p= [".", "," ";", ")", "(", "?", "/", "\", "!", ":"];
+a = replace(a,p," ");
+a = join(a);
+a = split(a);
+a(strlength(a)<=4) = [];
+C = categorical(a);
+wordcloud(C);
